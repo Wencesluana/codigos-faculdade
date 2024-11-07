@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Centralizado</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        label {
+            flex-basis: 40%;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="tel"], input[type="password"], input[type="date"], select {
+            flex-basis: 55%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        select, input[type="radio"] {
+            color: gray;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-group button {
+            width: 48%;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: green;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="meuFormulario">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha">
+                </div>
+                <div class="form-group">
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento">
+                </div>
+                <div class="form-group">
+                    <label for="dataInscricao">Data de Inscrição:</label>
+                    <input type="date" id="dataInscricao" name="dataInscricao">
+                </div>
+                <div class="form-group">
+                    <label for="profissional">Profissional:</label>
+                    <div style="flex-basis: 55%;">
+                        <input type="radio" id="sim" name="profissional" value="sim">
+                        <label for="sim" style="color: gray;">Sim</label>
+                        <input type="radio" id="nao" name="profissional" value="nao">
+                        <label for="nao" style="color: gray;">Não</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="instrumento">Instrumento:</label>
+                    <select id="instrumento" name="instrumento">
+                        <option value="">Selecione...</option>
+                        <option value="violao">Violão</option>
+                        <option value="guitarra">Guitarra</option>
+                    </select>
+                </div>
+                <div class="error" id="errorMessage"></div>
+                <div class="success" id="successMessage"></div>
+                <div class="button-group">
+                    <button type="button" id="limparBtn">Limpar</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00');
+            $('#telefone').mask('(00) 0 0000-0000');
+
+            $('#limparBtn').on('click', function() {
+                $('#meuFormulario')[0].reset();
+                $('#errorMessage').text('');
+                $('#successMessage').text('');
+            });
+
+            function validarNome(nome) {
+                const nomeSemNumeros = /^[a-zA-ZÀ-ÿ\s]+$/;
+                if (!nomeSemNumeros.test(nome)) return false;
+                const palavras = nome.trim().split(/\s+/);
+                return palavras.length >= 2;
+            }
+
+            function validarEmail(email) {
+                const emailRegex = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+                return emailRegex.test(email);
+            }
+
+            function validarSenha(senha) {
+                const senhaRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{10,}$/;
+                return senhaRegex.test(senha);
+            }
+
+            function validarDataNascimento(dataNascimento) {
+                const dataMin = new Date('1980-01-01');
+                const dataMax = new Date('2005-12-31');
+                const data = new Date(dataNascimento);
+                return data >= dataMin && data <= dataMax;
+            }
+
+            function validarDataInscricao(dataInscricao) {
+                const hoje = new Date();
+                const data = new Date(dataInscricao);
+                return data.getFullYear() === 2024 && data < hoje;
+            }
+
+            function validarCPF(cpf) {
+                cpf = cpf.replace(/[^\d]+/g, '');
+                if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+                let soma = 0, resto;
+
+                for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+                resto = (soma * 10) % 11;
+                if (resto === 10 || resto === 11) resto = 0;
+                if (resto != parseInt(cpf.substring(9, 10))) return false;
+
+                soma = 0;
+                for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+                resto = (soma * 10) % 11;
+                if (resto === 10 || resto === 11) resto = 0;
+                if (resto != parseInt(cpf.substring(10, 11))) return false;
+
+                return true;
+            }
+
+            $('#meuFormulario').on('submit', function(event) {
+                event.preventDefault();
+                
+                let errorMessage = $('#errorMessage');
+                let successMessage = $('#successMessage');
+                errorMessage.text('');
+                successMessage.text('');
+
+                let nome = $('#nome').val().trim();
+                let cpf = $('#cpf').val().trim();
+                let telefone = $('#telefone').val().trim();
+                let email = $('#email').val().trim();
+                let senha = $('#senha').val().trim();
+                let dataNascimento = $('#dataNascimento').val();
+                let dataInscricao = $('#dataInscricao').val();
+                let profissional = $('input[name="profissional"]:checked').val();
+                let instrumento = $('#instrumento').val();
+
+                // Validações
+                if (!validarNome(nome)) {
+                    errorMessage.text('O nome completo deve conter pelo menos duas palavras e não deve conter números.');
+                    return;
+                }
+
+                if (!validarEmail(email)) {
+                    errorMessage.text('E-mail inválido. Deve conter duas palavras separadas por ponto após o @ (exemplo@dominio.com).');
+                    return;
+                }
+
+                if (!validarCPF(cpf)) {
+                    errorMessage.text('CPF inválido. Por favor, insira um CPF válido.');
+                    return;
+                }
+
+                if (!telefone) {
+                    errorMessage.text('Por favor, insira um número de telefone.');
+                    return;
+                }
+
+                if (!validarSenha(senha)) {
+                    errorMessage.text('A senha deve ter no mínimo 10 caracteres, incluindo uma letra maiúscula, um dígito numérico e um caractere especial.');
+                    return;
+                }
+
+                if (!validarDataNascimento(dataNascimento)) {
+                    errorMessage.text('Data de nascimento inválida. Deve estar entre 01/01/1980 e 31/12/2005.');
+                    return;
+                }
+
+                if (!validarDataInscricao(dataInscricao)) {
+                    errorMessage.text('Data de inscrição inválida. Deve ser no ano de 2024 e anterior ao dia atual.');
+                    return;
+                }
+
+                if (!profissional) {
+                    errorMessage.text('Por favor, selecione se você é profissional.');
+                    return;
+                }
+
+                if (!instrumento) {
+                    errorMessage.text('Por favor, selecione um instrumento.');
+                    return;
+                }
+
+                // Se todas as validações passarem, enviar via AJAX
+                $.ajax({
+                    url: 'https://exemplo.com/enviar-formulario', // Substitua por sua URL real
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        nome: nome,
+                        email: email,
+                        cpf: cpf,
+                        telefone: telefone,
+                        senha: senha,
+                        dataNascimento: dataNascimento,
+                        dataInscricao: dataInscricao,
+                        profissional: profissional,
+                        instrumento: instrumento
+                    }),
+                    success: function(response) {
+                        successMessage.text('Formulário enviado com sucesso!');
+                        $('#meuFormulario')[0].reset(); // Limpa o formulário
+                    },
+                    error: function() {
+                        errorMessage.text('Erro ao enviar o formulário. Tente novamente.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

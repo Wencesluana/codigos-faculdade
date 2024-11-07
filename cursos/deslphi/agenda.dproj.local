@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/16 12:04:04.000.573,=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 11:34:52.455,=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 11:35:22.967,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\unitPrincipal.pas=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 11:35:22.967,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\unitPrincipal.dfm=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/08/20 11:35:56.138,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\agenda.dproj=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/08/20 11:36:40.853,=C:\Users\luana\OneDrive\Documentos\cursos\deslphi\Unit1.pas</Transaction>
+    <Transaction>2024/08/20 11:36:48.903,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\unitData.dfm=C:\Users\luana\OneDrive\Documentos\cursos\deslphi\Unit1.dfm</Transaction>
+    <Transaction>2024/08/20 11:36:48.903,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\unitData.pas=C:\Users\luana\OneDrive\Documentos\cursos\deslphi\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,6 @@
+Aluna: Luana Packer Wenceslau
+RA: 202210160
+Curso: Ciência da Computação
+Atividade: Lista 02 - Flutter
+Prazo: 15/09/2024
+

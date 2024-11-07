@@ -1,0 +1,317 @@
+<!-- Luana Packer Wenceslau - 202210160! -->
+<html>
+<head>
+    <title>Formulário</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00');
+            $('#telefone').mask('(00) 0 0000-0000');
+
+            $('#limparBtn').on('click', function() {
+                $('#formu')[0].reset();
+                $('input[name="profissional"]').prop('checked', false);
+                $('input[name="estilos"]').prop('checked', false);
+            });
+
+            function validarNome(nome) {
+                const nomeSemNumeros = /^[a-zA-ZÀ-ÿ\s]+$/;
+                if (!nomeSemNumeros.test(nome)) {
+                    return false;
+                }
+                const palavras = nome.trim().split(/\s+/);
+                return palavras.length >= 2;
+            }
+
+            function validarEmail(email) {
+                const emailRegex = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+                return emailRegex.test(email);
+            }
+
+            function validarSenha(senha) {
+                const senhaRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()+])[A-Za-z\d!@#$%^&*()+]{10,}$/;
+                return senhaRegex.test(senha);
+            }
+
+            function validarDataNascimento(dataNascimento) {
+                const dataMin = new Date('1980-01-01');
+                const dataMax = new Date('2005-12-31');
+                const data = new Date(dataNascimento);
+                return data >= dataMin && data <= dataMax;
+            }
+
+            function validarDataInscricao(dataInscricao) {
+                const hoje = new Date();
+                const data = new Date(dataInscricao);
+                return data.getFullYear() === 2024 && data < hoje;
+            }
+
+            function validarCPF(cpf) {
+                cpf = cpf.replace(/[^\d]+/g, '');
+                if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+                let soma, resto;
+                soma = 0;
+                for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+                resto = (soma * 10) % 11;
+                if ((resto == 10) || (resto == 11)) resto = 0;
+                if (resto != parseInt(cpf.substring(9, 10))) return false;
+                soma = 0;
+                for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+                resto = (soma * 10) % 11;
+                return resto == parseInt(cpf.substring(10, 11));
+            }
+
+            function validarInstrumento(instrumento) {
+                return instrumento !== "inicio" && instrumento !== "";
+            }
+
+            function validarProfissional(profissional) {
+                return profissional !== undefined;
+            }
+
+            function validarEstilos(estilos) {
+                return estilos.length > 0;
+            }
+
+            function validarTelefone(telefone) {
+                telefone = telefone.replace(/\D/g, '');
+                return telefone.length === 11; 
+            }
+
+            $('#formu').on('submit', function(event) {
+                event.preventDefault();
+
+                const nome = $('#nome').val().trim();
+                const cpf = $('#cpf').val().trim();
+                const email = $('#email').val().trim();
+                const senha = $('#senha').val().trim();
+                const telefone = $('#telefone').val().trim();
+                const dataNascimento = $('#dataNascimento').val();
+                const dataInscricao = $('#dataInscricao').val();
+                const instrumento = $('#instrumento').val();
+                const profissional = $('input[name="profissional"]:checked').val();
+                const estilos = $('input[name="estilos"]:checked').map(function() {
+                    return this.value;
+                }).get();
+
+                let erros = [];
+                if (!validarNome(nome)) {
+                    erros.push('Nome incompleto.');
+                }
+                if (!validarCPF(cpf)) {
+                    erros.push('CPF inválido.');
+                }
+                if (!validarEmail(email)) {
+                    erros.push('E-mail inválido.');
+                }
+                if (!validarSenha(senha)) {
+                    erros.push('Senha deve ter pelo menos 10 caracteres, uma letra maiúscula, um número e um caractere especial.');
+                }
+                if (!validarTelefone(telefone)) {
+                    erros.push('Telefone inválido.');
+                }
+                if (!validarDataNascimento(dataNascimento)) {
+                    erros.push('Data de nascimento inválida.');
+                }
+                if (!validarDataInscricao(dataInscricao)) {
+                    erros.push('Data de inscrição inválida.');
+                }
+                if (!validarInstrumento(instrumento)) {
+                    erros.push('Selecione um instrumento musical.');
+                }
+                if (!validarProfissional(profissional)) {
+                    erros.push('Selecione se é profissional.');
+                }
+                if (!validarEstilos(estilos)) {
+                    erros.push('Selecione um estilo.');
+                }
+
+                if (erros.length > 0) {
+                    alert(erros.join('\n'));
+                } else {
+                    $.ajax({
+                        url: 'https://jsonplaceholder.typicode.com/posts', 
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            nome: nome,
+                            cpf: cpf,
+                            email: email,
+                            senha: senha,
+                            telefone: telefone,
+                            dataNascimento: dataNascimento,
+                            dataInscricao: dataInscricao,
+                            instrumento: instrumento,
+                            profissional: profissional,
+                            estilos: estilos,
+                        }),
+                        success: function(response) {
+                            alert('Formulário enviado com sucesso!');
+                            $('#formu')[0].reset(); 
+                        },
+                        error: function(xhr, status, error) {
+                            alert('Erro ao enviar formulário: ' + error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>    
+
+    <style>
+        h1 {
+            color: blue;
+            margin-top: auto;
+            text-align: center;
+            font-size: 38px;   
+        }
+        .cor1 {
+            color: green;
+        }
+
+        .cor2 {
+            color: red;
+        }
+
+        .carta {
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        body, html {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .est {
+            padding: 20px;
+            width: 500px;
+        }
+
+        .campo {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 9px;
+        }
+
+        label {
+            flex-basis: 40%;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        select, input[type="radio"],input[type="date"], input[type="checkbox"] {
+            color: gray;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        .bgrupo {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bgrupo button {
+            font-weight: bold;
+            flex-basis: 30%;
+        }
+
+        .checkbox-group {
+            flex-basis: 40%;
+            align-items: flex-start;
+            color: gray;
+            text-decoration: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carta">
+        <div class="est">
+            <form id="formu" method="post">
+                <h1>Formulário</h1><br>
+                <div class="campo">
+                    <label class="cor1" for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" ><br>
+                </div>
+                <div class="campo">
+                    <label for="cpf" class="cor1">CPF:</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" ><br>
+                </div>
+                <div class="campo">
+                    <label for="email" class="cor1">E-mail:</label>
+                    <input type="text" id="email" name="email" placeholder="Digite seu e-mail" ><br>
+                </div>
+                <div class="campo">
+                    <label for="senha" class="cor1">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" ><br>
+                </div>
+                <div class="campo">
+                    <label for="telefone" class="cor1">Telefone para Contato:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" ><br>
+                </div>
+                <div class="campo">
+                    <label for="dataNascimento" class="cor1">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" placeholder="Digite sua data de nascimento" ><br>
+                </div>
+                <div class="campo">
+                    <label for="dataInscricao" class="cor1">Data de Inscrição:</label>
+                    <input type="date" id="dataInscricao" name="dataInscricao" placeholder="Digite sua data de inscrição" ><br>
+                </div>
+                <div class="campo">
+                    <label for="instrumento" class="cor2">Instrumento musical:</label>
+                    <select id="instrumento" name="instrumento">
+                        <option value="inicio" ></option>
+                        <option value="guitarra" >Guitarra</option>
+                        <option value="violao" >Violão</option>
+                        <option value="bateria" >Bateria</option>
+                        <option value="flauta" >Flauta</option>
+                        <option value="baixo" >Baixo</option>
+                        <option value="pandeiro" >Pandeiro</option>
+                        <option value="viola" >Viola</option>
+                        <option value="saxofone" >Saxofone</option>
+                    </select><br>
+                </div>
+                <div class="campo">
+                    <label for="profissional" class="cor2">Profissional:</label>
+                    <div style="flex-basis: 42%;">
+                    <input type="radio" id="sim" name="profissional" value="sim">
+                    <label for="sim" style="color: gray;">Sim</label>
+                    <input type="radio" id="nao" name="profissional" value="nao">
+                    <label for="nao" style="color: gray;">Não</label><br>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="estilos" class="cor2" style="margin-top: 7%; margin-bottom: 7%;">Estilos:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="estilos" id="rock" value="rock">Rock<br>
+                        <input type="checkbox" name="estilos" id="pop" value="pop">Pop<br>
+                        <input type="checkbox" name="estilos" id="bn" value="bossa">Bossa Nova<br>
+                        <input type="checkbox" name="estilos" id="samba" value="samba">Samba<br>
+                    </div>
+                </div>
+                <div class="error" id="errorMessage"></div>
+                <div class="bgrupo">
+                    <button type="submit">Enviar</button>
+                    <button type="button" id="limparBtn">Limpar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

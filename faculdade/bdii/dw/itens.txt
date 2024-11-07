@@ -1,0 +1,224 @@
+ uma locadora, o qual contenha o id do cliente, idade, sexo( m, f ou -), titulo do filme, duração do filme (apenas numeros), tempo de locação (apenas numeros), frequencia de locação no mes(apenas numeros), quantidade de locacao por vez(apenas numeros), valor locacao (apenas numeros), meio de pagamento (pix, cartao, dinheiro). no modelo " ", " ", " ", " ", " ", " ", " ", " ", " ", " ";  com id contendo 000 e mais dois digitos 
+
+filmes
+
+"00001", 28, "M", "O Poderoso Chefão", "Drama", 175, 3, 2, 1, 15, "Cartão";
+"00011", 42, "M", "Pulp Fiction", "Crime", 154, 4, 2, 1, 16, "Cartão";
+"00012", 28, "F", "Frozen", "Animação", 102, 3, 2, 1, 12, "PIX";
+"00045", 40, "M", "Vingadores: Ultimato", "Ação", 181, 2, 3, 2, 22, "Cartão";
+"00056", 36, "M", "Interestelar", "Ficção Científica", 169, 5, 1, 2, 20, "PIX";
+"00067", 30, "F", "O Poderoso Chefão", "Drama", 175, 4, 3, 1, 18, "Dinheiro";
+"00078", 29, "M", "Matrix", "Ficção Científica", 136, 2, 2, 2, 16, "Cartão";
+"00089", 35, "F", "O Senhor dos Anéis: A Sociedade do Anel", "Fantasia", 178, 5, 1, 1, 19, "PIX";
+"00090", 31, "M", "Pulp Fiction", "Crime", 154, 3, 2, 1, 17, "Dinheiro";
+"00101", 28, "F", "Harry Potter e a Pedra Filosofal", "Fantasia", 152, 4, 1, 2, 16, "Cartão";
+"00110", 31, "F", "Harry Potter e as Relíquias da Morte", "Fantasia", 130, 4, 2, 1, 15, "Dinheiro";
+"00123", 27, "F", "Toy Story", "Animação", 81, 2, 3, 1, 10, "Dinheiro";
+"00123", 35, "F", "Titanic", "Romance", 195, 5, 1, 2, 20, "PIX";
+"00134", 33, "M", "Avatar", "Aventura", 162, 5, 1, 2, 20, "Cartão";
+"00145", 37, "M", "Senhor dos Anéis: A Sociedade do Anel", "Fantasia", 178, 4, 3, 1, 19, "PIX";
+"00222", 30, "F", "A Origem", "Ficção Científica", 148, 5, 3, 1, 18, "PIX";
+"00234", 24, "F", "Jurassic Park", "Ação", 127, 3, 3, 1, 14, "Dinheiro";
+"00234", 41, "M", "De Volta Para o Futuro", "Aventura", 116, 4, 2, 1, 14, "PIX";
+"00256", 45, "F", "O Fabuloso Destino de Amélie Poulain", "Romance", 122, 4, 2, 1, 14, "Dinheiro";
+"00272", 29, "M", "O Rei Leão", "Animação", 88, 3, 1, 1, 10, "Dinheiro";
+"00321", 26, "F", "Crepúsculo", "Romance", 122, 3, 1, 1, 12, "Dinheiro";
+"00345", 24, "F", "A Origem", "Ficção Científica", 148, 3, 2, 1, 15, "Cartão";
+"00345", 29, "F", "Os Incríveis", "Animação", 115, 2, 3, 2, 12, "Cartão";
+"00345", 32, "F", "Cidade de Deus", "Drama", 130, 5, 1, 1, 16, "Dinheiro";
+"00378", 26, "M", "Coco", "Animação", 105, 3, 3, 1, 13, "PIX";
+"00444", 25, "F", "La La Land", "Musical", 128, 3, 1, 1, 13, "Dinheiro";
+"00456", 37, "M", "Clube da Luta", "Drama", 139, 5, 1, 2, 17, "Dinheiro";
+"00456", 37, "M", "Interestelar", "Ficção Científica", 169, 5, 1, 2, 20, "PIX";
+"00456", 39, "F", "Pantera Negra", "Ação", 134, 4, 2, 2, 18, "Cartão";
+"00456", 42, "M", "O Fabuloso Destino de Amélie Poulain", "Romance", 122, 5, 1, 2, 16, "Dinheiro";
+"00490", 39, "F", "Pantera Negra", "Ação", 134, 4, 2, 2, 18, "Cartão";
+"00555", 38, "M", "O Senhor dos Anéis: O Retorno do Rei", "Fantasia", 201, 7, 1, 2, 24, "PIX";
+"00567", 31, "M", "Matrix", "Ficção Científica", 136, 4, 2, 1, 17, "PIX";
+"00567", 36, "F", "A Bela e a Fera", "Fantasia", 129, 5, 2, 1, 15, "PIX";
+"00666", 36, "M", "Interestelar", "Ficção Científica", 169, 6, 2, 2, 20, "Cartão";
+"00672", 29, "M", "O Rei Leão", "Animação", 88, 3, 1, 1, 10, "Dinheiro";
+"00678", 29, "F", "Harry Potter e a Pedra Filosofal", "Fantasia", 152, 6, 2, 2, 16, "Cartão";
+"00777", 23, "F", "Cidade de Deus", "Drama", 130, 5, 2, 1, 16, "Dinheiro";
+"00784", 36, "F", "A Bela e a Fera", "Fantasia", 129, 5, 2, 1, 15, "PIX";
+"00888", 27, "M", "Clube da Luta", "Drama", 139, 3, 1, 1, 14, "PIX";
+"00890", 33, "M", "Titanic", "Romance", 195, 6, 2, 1, 22, "PIX";
+"00890", 38, "M", "Pantera Negra", "Ação", 134, 6, 2, 1, 19, "Cartão";
+"00901", 28, "F", "Harry Potter e a Pedra Filosofal", "Fantasia", 152, 4, 1, 2, 16, "Cartão";
+"00906", 32, "M", "Mad Max: Estrada da Fúria", "Ação", 120, 4, 1, 2, 17, "Cartão";
+"00987", 22, "F", "Interestelar", "Ficção Científica", 169, 7, 4, 1, 18, "Dinheiro";
+"00999", 34, "M", "O Rei Leão", "Animação", 88, 3, 1, 1, 10, "Cartão";
+"01012", 33, "M", "Titanic", "Romance", 195, 6, 2, 1, 22, "PIX";
+"01123", 26, "F", "Jurassic Park", "Ação", 127, 3, 3, 1, 14, "Dinheiro";
+"01234", 40, "M", "A Lista de Schindler", "Drama", 195, 7, 1, 2, 21, "Cartão";
+"01345", 27, "F", "Forrest Gump", "Drama", 142, 4, 2, 1, 18, "PIX";
+
+cliente
+tendo os id clientes definidos anteriormente, crie informaçoes correspondentes com id cliente, nome completo,  apelido, idade (so numeros), endereco, telefone (só numeros), sexo (f, m ou -)
+
+"00378", "Larissa Costa", "Larissa", 26, "Rua das Alegrias, 963", 987963258, "M";
+"00444", "Fernanda Almeida", "Fernanda", 25, "Travessa das Maravilhas, 741", 987741963, "F";
+"00456", "Daniel Santos", "Daniel", 37, "Avenida da Aventura, 369", 987369741, "M";
+"00490", "Carolina Alves", "Carolina", 39, "Alameda das Maravilhas, 852", 987852369, "F";
+"00555", "Roberto Lima", "Roberto", 38, "Beco das Ilusões, 654", 987654852, "M";
+"00567", "Ana Paula Fernandes", "Ana Paula", 31, "Rua dos Sonhos, 147", 987147654, "F";
+"00666", "Leonardo Oliveira", "Leonardo", 36, "Travessa dos Desejos, 963", 987963741, "M";
+"00672", "Carla Santos", "Carla", 29, "Avenida da Felicidade, 258", 987258963, "M";
+"00678", "Fernanda Costa", "Fernanda", 29, "Alameda da Imaginação, 852", 987852258, "F";
+"00777", "Guilherme Almeida", "Guilherme", 23, "Rua da Aventura, 741", 987741852, "F";
+"00784", "Marina Oliveira", "Marina", 36, "Travessa das Maravilhas, 369", 987369741, "F";
+"00888", "Rodrigo Silva", "Rodrigo", 27, "Avenida dos Sonhos, 852", 987852369, "M";
+"00890", "Luana Costa", "Luana", 33, "Beco da Imaginação, 147", 987147852, "M";
+"00901", "Felipe Santos", "Felipe", 28, "Rua da Felicidade, 963", 987963147, "F";
+"00906", "Vanessa Almeida", "Vanessa", 32, "Travessa da Imaginação, 258", 987258963, "M";
+"00987", "Giovana Lima", "Giovana", 22, "Avenida dos Desejos, 741", 987741258, "F";
+"00999", "Ricardo Oliveira", "Ricardo", 34, "Alameda das Ilusões, 852", 987852741, "M";
+"01012", "Bianca Santos", "Bianca", 33, "Beco da Aventura, 147", 987147852, "M";
+"01123", "Cristina Alves", "Cristina", 26, "Rua da Felicidade, 963", 987963147, "F";
+"01234", "Paulo Silva", "Paulo", 40, "Travessa dos Sonhos, 258", 987258963, "M";
+"01345", "Jessica Lima", "Jessica", 27, "Avenida da Imaginação, 741", 987741258, "F";
+
+
+locadora CineMundo
+
+create database loc;
+
+use database loc;
+
+create table filmes (id_filme INT AUTO_INCREMENT PRIMARY KEY, id_cliente, idade, sexo, titulo_filme, duracao_filme_hr, tempo_locacao, freq_loc_mensal, quant_loc, valor_loc, pagamento_loc);
+
+INSERT INTO filmes VALUES
+("00001", 28, "M", "O Poderoso Chefão", "Drama", 175, 3, 2, 1, 15, "Cartão"),
+("00011", 42, "M", "Pulp Fiction", "Crime", 154, 4, 2, 1, 16, "Cartão"),
+("00012", 28, "F", "Frozen", "Animação", 102, 3, 2, 1, 12, "PIX"),
+("00045", 40, "M", "Vingadores: Ultimato", "Ação", 181, 2, 3, 2, 22, "Cartão"),
+("00056", 36, "M", "Interestelar", "Ficção Científica", 169, 5, 1, 2, 20, "PIX"),
+("00067", 30, "F", "O Poderoso Chefão", "Drama", 175, 4, 3, 1, 18, "Dinheiro"),
+("00078", 29, "M", "Matrix", "Ficção Científica", 136, 2, 2, 2, 16, "Cartão"),
+("00089", 35, "F", "O Senhor dos Anéis: A Sociedade do Anel", "Fantasia", 178, 5, 1, 1, 19, "PIX"),
+("00090", 31, "M", "Pulp Fiction", "Crime", 154, 3, 2, 1, 17, "Dinheiro"),
+("00101", 28, "F", "Harry Potter e a Pedra Filosofal", "Fantasia", 152, 4, 1, 2, 16, "Cartão"),
+("00110", 31, "F", "Harry Potter e as Relíquias da Morte", "Fantasia", 130, 4, 2, 1, 15, "Dinheiro"),
+("00123", 27, "F", "Toy Story", "Animação", 81, 2, 3, 1, 10, "Dinheiro"),
+("00123", 35, "F", "Titanic", "Romance", 195, 5, 1, 2, 20, "PIX"),
+("00134", 33, "M", "Avatar", "Aventura", 162, 5, 1, 2, 20, "Cartão"),
+("00145", 37, "M", "Senhor dos Anéis: A Sociedade do Anel", "Fantasia", 178, 4, 3, 1, 19, "PIX"),
+("00222", 30, "F", "A Origem", "Ficção Científica", 148, 5, 3, 1, 18, "PIX"),
+("00234", 24, "F", "Jurassic Park", "Ação", 127, 3, 3, 1, 14, "Dinheiro"),
+("00234", 41, "M", "De Volta Para o Futuro", "Aventura", 116, 4, 2, 1, 14, "PIX"),
+("00256", 45, "F", "O Fabuloso Destino de Amélie Poulain", "Romance", 122, 4, 2, 1, 14, "Dinheiro"),
+("00272", 29, "M", "O Rei Leão", "Animação", 88, 3, 1, 1, 10, "Dinheiro"),
+("00321", 26, "F", "Crepúsculo", "Romance", 122, 3, 1, 1, 12, "Dinheiro"),
+("00345", 24, "F", "A Origem", "Ficção Científica", 148, 3, 2, 1, 15, "Cartão"),
+("00345", 29, "F", "Os Incríveis", "Animação", 115, 2, 3, 2, 12, "Cartão"),
+("00345", 32, "F", "Cidade de Deus", "Drama", 130, 5, 1, 1, 16, "Dinheiro"),
+("00378", 26, "M", "Coco", "Animação", 105, 3, 3, 1, 13, "PIX"),
+("00444", 25, "F", "La La Land", "Musical", 128, 3, 1, 1, 13, "Dinheiro"),
+("00456", 37, "M", "Clube da Luta", "Drama", 139, 5, 1, 2, 17, "Dinheiro"),
+("00456", 37, "M", "Interestelar", "Ficção Científica", 169, 5, 1, 2, 20, "PIX"),
+("00456", 39, "F", "Pantera Negra", "Ação", 134, 4, 2, 2, 18, "Cartão"),
+("00456", 42, "M", "O Fabuloso Destino de Amélie Poulain", "Romance", 122, 5, 1, 2, 16, "Dinheiro"),
+("00490", 39, "F", "Pantera Negra", "Ação", 134, 4, 2, 2, 18, "Cartão"),
+("00555", 38, "M", "O Senhor dos Anéis: O Retorno do Rei", "Fantasia", 201, 7, 1, 2, 24, "PIX"),
+("00567", 31, "M", "Matrix", "Ficção Científica", 136, 4, 2, 1, 17, "PIX"),
+("00567", 36, "F", "A Bela e a Fera", "Fantasia", 129, 5, 2, 1, 15, "PIX"),
+("00666", 36, "M", "Interestelar", "Ficção Científica", 169, 6, 2, 2, 20, "Cartão"),
+("00672", 29, "M", "O Rei Leão", "Animação", 88, 3, 1, 1, 10, "Dinheiro"),
+("00678", 29, "F", "Harry Potter e a Pedra Filosofal", "Fantasia", 152, 6, 2, 2, 16, "Cartão"),
+("00777", 23, "F", "Cidade de Deus", "Drama", 130, 5, 2, 1, 16, "Dinheiro"),
+("00784", 36, "F", "A Bela e a Fera", "Fantasia", 129, 5, 2, 1, 15, "PIX"),
+("00888", 27, "M", "Clube da Luta", "Drama", 139, 3, 1, 1, 14, "PIX"),
+("00890", 33, "M", "Titanic", "Romance", 195, 6, 2, 1, 22, "PIX"),
+("00890", 38, "M", "Pantera Negra", "Ação", 134, 6, 2, 1, 19, "Cartão"),
+("00901", 28, "F", "Harry Potter e a Pedra Filosofal", "Fantasia", 152, 4, 1, 2, 16, "Cartão"),
+("00906", 32, "M", "Mad Max: Estrada da Fúria", "Ação", 120, 4, 1, 2, 17, "Cartão"),
+("00987", 22, "F", "Interestelar", "Ficção Científica", 169, 7, 4, 1, 18, "Dinheiro"),
+("00999", 34, "M", "O Rei Leão", "Animação", 88, 3, 1, 1, 10, "Cartão"),
+("01012", 33, "M", "Titanic", "Romance", 195, 6, 2, 1, 22, "PIX"),
+("01123", 26, "F", "Jurassic Park", "Ação", 127, 3, 3, 1, 14, "Dinheiro"),
+("01234", 40, "M", "A Lista de Schindler", "Drama", 195, 7, 1, 2, 21, "Cartão"),
+("01345", 27, "F", "Forrest Gump", "Drama", 142, 4, 2, 1, 18, "PIX");
+
+
+create table clientes(id_cliente, nome, apelido, idade, endereco, telefone, sexo);
+
+INSERT INTO clientes VALUES
+("00378", "Larissa Costa", "Larissa", 26, "Rua das Alegrias, 963", 987963258, "M"),
+("00444", "Fernanda Almeida", "Fernanda", 25, "Travessa das Maravilhas, 741", 987741963, "F"),
+("00456", "Daniel Santos", "Daniel", 37, "Avenida da Aventura, 369", 987369741, "M"),
+("00490", "Carolina Alves", "Carolina", 39, "Alameda das Maravilhas, 852", 987852369, "F"),
+("00555", "Roberto Lima", "Roberto", 38, "Beco das Ilusões, 654", 987654852, "M"),
+("00567", "Ana Paula Fernandes", "Ana Paula", 31, "Rua dos Sonhos, 147", 987147654, "F"),
+("00666", "Leonardo Oliveira", "Leonardo", 36, "Travessa dos Desejos, 963", 987963741, "M"),
+("00672", "Carla Santos", "Carla", 29, "Avenida da Felicidade, 258", 987258963, "M"),
+("00678", "Fernanda Costa", "Fernanda", 29, "Alameda da Imaginação, 852", 987852258, "F"),
+("00777", "Guilherme Almeida", "Guilherme", 23, "Rua da Aventura, 741", 987741852, "F"),
+("00784", "Marina Oliveira", "Marina", 36, "Travessa das Maravilhas, 369", 987369741, "F"),
+("00888", "Rodrigo Silva", "Rodrigo", 27, "Avenida dos Sonhos, 852", 987852369, "M"),
+("00890", "Luana Costa", "Luana", 33, "Beco da Imaginação, 147", 987147852, "M"),
+("00901", "Felipe Santos", "Felipe", 28, "Rua da Felicidade, 963", 987963147, "F"),
+("00906", "Vanessa Almeida", "Vanessa", 32, "Travessa da Imaginação, 258", 987258963, "M"),
+("00987", "Giovana Lima", "Giovana", 22, "Avenida dos Desejos, 741", 987741258, "F"),
+("00999", "Ricardo Oliveira", "Ricardo", 34, "Alameda das Ilusões, 852", 987852741, "M"),
+("01012", "Bianca Santos", "Bianca", 33, "Beco da Aventura, 147", 987147852, "M"),
+("01123", "Cristina Alves", "Cristina", 26, "Rua da Felicidade, 963", 987963147, "F"),
+("01234", "Paulo Silva", "Paulo", 40, "Travessa dos Sonhos, 258", 987258963, "M"),
+("01345", "Jessica Lima", "Jessica", 27, "Avenida da Imaginação, 741", 987741258, "F");
+
+pagamento 
+
+create table pagamento (id_pagamento, forma_pagamento, id_cliente);
+
+create table locacao (id_loc int auto increment primary key, id_cliente, id_filme, mes_loc);
+
+INSERT INTO locacao (id_locacao, id_cliente, id_filme, mes_locacao) VALUES
+("000001", "00001", "00145", "Janeiro"),
+("000002", "00011", "00145", "Fevereiro"),
+("000003", "00012", "00222", "Março"),
+("000004", "00045", "00234", "Abril"),
+("000005", "00056", "00256", "Maio"),
+("000006", "00067", "00001", "Junho"),
+("000007", "00078", "00234", "Julho"),
+("000008", "00089", "00145", "Agosto"),
+("000009", "00090", "00011", "Setembro"),
+("000010", "00101", "00123", "Outubro"),
+("000011", "00110", "00123", "Novembro"),
+("000012", "00123", "00145", "Dezembro"),
+("000013", "00123", "00222", "Janeiro"),
+("000014", "00134", "00145", "Fevereiro"),
+("000015", "00145", "00234", "Março"),
+("000016", "00222", "00123", "Abril"),
+("000017", "00234", "00234", "Maio"),
+("000018", "00256", "00256", "Junho"),
+("000019", "00272", "00123", "Julho"),
+("000020", "00321", "00234", "Agosto"),
+("000021", "00345", "00234", "Setembro"),
+("000022", "00345", "00101", "Outubro"),
+("000023", "00345", "00345", "Novembro"),
+("000024", "00378", "00345", "Dezembro"),
+("000025", "00444", "00378", "Janeiro"),
+("000026", "00456", "00345", "Fevereiro"),
+("000027", "00456", "00345", "Março"),
+("000028", "00456", "00456", "Abril"),
+("000029", "00456", "00456", "Maio"),
+("000030", "00490", "00555", "Junho"),
+("000031", "00555", "00567", "Julho"),
+("000032", "00567", "00567", "Agosto"),
+("000033", "00666", "00672", "Setembro"),
+("000034", "00672", "00678", "Outubro"),
+("000035", "00678", "00777", "Novembro"),
+("000036", "00777", "00784", "Dezembro"),
+("000037", "00784", "00888", "Janeiro"),
+("000038", "00888", "00890", "Fevereiro"),
+("000039", "00890", "00890", "Março"),
+("000040", "00890", "00901", "Abril"),
+("000041", "00901", "00906", "Maio"),
+("000042", "00906", "00987", "Junho"),
+("000043", "00987", "00999", "Julho"),
+("000044", "00999", "01012", "Agosto"),
+("000045", "01012", "01123", "Setembro"),
+("000046", "01123", "01234", "Outubro"),
+("000047", "01234", "01345", "Novembro"),
+("000048", "01345", "00001", "Dezembro"),
+("000049", "00001", "00001", "Janeiro"),
+("000050", "00011", "00011", "Fevereiro");

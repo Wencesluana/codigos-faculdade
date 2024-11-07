@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/16 12:04:04.000.573,=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/16 12:04:31.515,=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/16 12:07:00.043,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\cadastrocliente.dfm=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/08/16 12:07:00.043,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\cadastrocliente.pas=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/18 18:06:07.898,C:\Users\luana\OneDrive\Documentos\cursos\deslphi\clientes.dproj=C:\Users\luana\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
